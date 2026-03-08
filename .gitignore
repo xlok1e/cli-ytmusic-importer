@@ -1,0 +1,4 @@
+venv/
+.venv/
+browser.json
+config.json
