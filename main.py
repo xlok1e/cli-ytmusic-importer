@@ -199,7 +199,7 @@ def start_import_flow():
             pl_name = Prompt.ask("\n[bold red]>[/bold red] [bold]НАЗВАНИЕ ПЛЕЙЛИСТА[/bold]", default="My Imported Playlist")
 
             with console.status("[bold red]Создаём пустой плейлист..."):
-                playlist_id = ytm.create_playlist(pl_name, "Created via YTMUSIC IMPORTER")
+                playlist_id = ytm.create_playlist(pl_name, "Created via YTMUSIC IMPORTER (Developer: t.me/egorlok1e)")
 
             start_index = 0
             imported_count = 0
