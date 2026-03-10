@@ -26,7 +26,7 @@
 
 ```bash
 # Клонировать репозиторий
-git clone <repo-url>
+git clone https://github.com/xlok1e/cli-ytmusic-importer
 cd cli-yt-importer
 
 # Создать виртуальное окружение и установить зависимости
@@ -41,14 +41,13 @@ pip install ytmusicapi rich
 
 ## 🔑 Шаг 1 — Авторизация
 
-Авторизация происходит через cookies браузера. Нужно один раз скопировать заголовки запроса из DevTools.
+Авторизация происходит через cookies браузера. Нужно один скопировать заголовки запроса из DevTools.
 
 ### 1.1 Открыть DevTools и поставить лайк
 
 1. Перейдите на [https://music.youtube.com](https://music.youtube.com) и убедитесь, что вы **вошли в аккаунт**.
 2. Откройте DevTools:
-   - **Windows/Linux:** `F12` или `Ctrl+Shift+I`
-   - **macOS:** `Command+Option+I`
+   - `F12` или `Ctrl+Shift+I`
 3. Перейдите на вкладку **Network**.
 4. Поставьте **лайк** любому треку — в Network появится POST-запрос.
 
@@ -64,18 +63,7 @@ pip install ytmusicapi rich
 Найдите запрос с именем `browse?...` и статусом **200**.  
 Нажмите на запрос → вкладка **Headers** → прокрутите до раздела **Request Headers** → скопируйте всё начиная с `accept: */*`.
 
-> На новых версиях Chrome: ПКМ по имени запроса → **"Copy as fetch (Node.js)"**, затем вручную оставьте только блок заголовков в формате:
->
-> ```json
-> {
-> 	"Accept": "*/*",
-> 	"Authorization": "PASTE_AUTHORIZATION",
-> 	"Content-Type": "application/json",
-> 	"X-Goog-AuthUser": "0",
-> 	"x-origin": "https://music.youtube.com",
-> 	"Cookie": "PASTE_COOKIE"
-> }
-> ```
+> На новых версиях Chrome: ПКМ по имени запроса → **"Copy as fetch (Node.js)"**
 
 ### 1.3 Создать browser.json
 
@@ -89,7 +77,7 @@ ytmusicapi browser
 
 #### Windows
 
-Просто вставьте: `Ctrl+V` или ПКМ в окне терминала. Нажмите `Enter`, затем `Ctrl+Z` + `Enter` (конец ввода).
+Просто вставьте: `Ctrl+V` или ПКМ в окне терминала. Нажмите `Ctrl + D`.
 
 #### macOS
 
@@ -101,8 +89,6 @@ pbpaste | ytmusicapi browser
 ```
 
 После успешного выполнения в папке появится файл **`browser.json`** — он содержит ваши учётные данные.
-
-> 💡 Токен действует **~2 года**, пока вы не выйдете из Google в том браузере, которым создавали `browser.json`.
 
 ---
 
