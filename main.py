@@ -23,8 +23,8 @@ MAX_RETRIES = 5
 RETRY_BASE_DELAY = 5
 CHECKPOINT_FILE = "checkpoint.json"
 BROWSER_AUTH_FILE = "browser.json"
-SEARCH_BATCH = 500   # треков за один поисковый батч
-ADD_BATCH = 1000     # треков за один вызов add_playlist_items
+SEARCH_BATCH = 250 
+ADD_BATCH = 1000    
 
 
 def save_checkpoint(tracks_file: str, playlist_id: str, next_index: int, imported_count: int) -> None:
